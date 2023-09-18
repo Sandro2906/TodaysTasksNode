@@ -25,15 +25,16 @@ catch(err){
     console.log(err)
 }
 
-app.get('/getTasks', async(req,res)=>{
-    try{
+app.get('/getTasks', async (req, res) => {
+    try {
         const data = await Tabela.find({})
         res.status(200).json(data)
-
-    }catch(err){
-        res.status(404).json(err.message)
+    } catch (err) {
+        console.error(err); // Log the error for debugging purposes
+        res.status(500).json({ error: 'Internal server error' }); // Return a 500 status code for server errors
     }
 })
+
 
 app.post('/postTasks',async(req,res)=>{
     const {task} = req.body;
