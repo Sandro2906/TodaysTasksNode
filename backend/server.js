@@ -7,9 +7,11 @@ require('dotenv').config()
 
 const app = express()
 
+const allowedOrigin = 'https://todays-tasks-node.vercel.app'
+
 app.use(express.json())
 app.use(cors({
-    origin: 'https://todays-tasks-node.vercel.app',
+    origin: allowedOrigin,
     credentials: true
 }))
 
