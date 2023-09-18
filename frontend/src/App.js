@@ -4,7 +4,7 @@ import TasksPage from "./pages/TasksPage";
 import axios from 'axios'
 
 axios.defaults.baseURL = 'https://todays-tasks-node-tt5m.vercel.app'
-axios.defaults.credentials = true
+axios.defaults.withCredentials = true 
 function App() {
   return (
     <div className="App">
